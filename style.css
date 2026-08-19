@@ -159,3 +159,30 @@ footer{
 }
 
 }
+#theme-toggle{
+    padding:10px 15px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.light-mode{
+    background:#ffffff;
+    color:#111827;
+}
+
+.light-mode .navbar{
+    background:#f3f4f6;
+}
+
+.light-mode .card,
+.light-mode .skill{
+    background:#e5e7eb;
+    color:#111827;
+}
+
+.light-mode footer{
+    background:#f3f4f6;
+    color:#111827;
+}
