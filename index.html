@@ -1,80 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <meta name="description"
           content="Midun Shankar K - B.Com IT Student Portfolio">
 
+    <meta name="author"
+          content="Midun Shankar K">
+
     <title>Midun Shankar K | Portfolio</title>
 
-    <link rel="stylesheet" href="style.css">
-
     <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
           rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="style.css">
+
 </head>
 
+
 <body>
-
-<!-- ================= LOADER ================= -->
-
-<div id="loader">
-    <div class="loader-circle"></div>
-    <h2>Loading Portfolio...</h2>
-</div>
-
-
-<!-- ================= BACKGROUND ================= -->
-
-<div class="background">
-
-    <span class="circle circle1"></span>
-    <span class="circle circle2"></span>
-    <span class="circle circle3"></span>
-
-    <div class="stars">
-        <span>✦</span>
-        <span>✧</span>
-        <span>✦</span>
-        <span>✧</span>
-        <span>✦</span>
-    </div>
-
-</div>
 
 
 <!-- ================= NAVBAR ================= -->
 
-<header>
+<header class="header">
 
     <nav class="navbar">
 
-        <div class="logo">
-            <span>MS</span>
-            <h2>Midun</h2>
-        </div>
+        <a href="#home" class="logo">
+            MSK
+        </a>
 
-        <button class="menu-btn" id="menuBtn">
+
+        <button class="menu-button"
+                id="menuButton"
+                aria-label="Open Menu">
+
             ☰
+
         </button>
 
-        <ul class="nav-links" id="navLinks">
 
-            <li><a href="#home" class="active">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#certificates">Certificates</a></li>
-            <li><a href="#contact">Contact</a></li>
+        <ul class="nav-links"
+            id="navLinks">
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#skills">Skills</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#certificates">Certificates</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
 
         </ul>
 
-        <button id="themeBtn" class="theme-btn">
+
+        <button class="theme-button"
+                id="themeButton"
+                aria-label="Change Theme">
+
             🌙
+
         </button>
 
     </nav>
@@ -82,154 +100,263 @@
 </header>
 
 
+
+<!-- ================= MAIN ================= -->
+
+<main>
+
+
 <!-- ================= HOME ================= -->
 
-<section id="home" class="hero">
+<section id="home"
+         class="hero">
 
-    <div class="hero-content">
+    <div class="container hero-container">
 
-        <p class="small-title">
-            WELCOME TO MY PORTFOLIO
-        </p>
 
-        <h1>
-            Hi, I'm
-            <span>Midun Shankar K</span>
-        </h1>
+        <div class="hero-text">
 
-        <h2>
-            <span id="typing"></span>
-        </h2>
+            <p class="welcome">
+                HELLO, I'M
+            </p>
 
-        <p>
-            B.Com IT student passionate about technology,
-            web development, digital skills and creative learning.
-        </p>
 
-        <div class="hero-buttons">
+            <h1>
+                Midun
+                <span>Shankar K</span>
+            </h1>
 
-            <a href="#projects" class="btn primary">
-                View My Work
-            </a>
 
-            <a href="#contact" class="btn secondary">
-                Contact Me
-            </a>
+            <h2>
+                B.Com IT Student
+            </h2>
+
+
+            <p class="hero-description">
+
+                An aspiring IT professional interested in
+                web development, programming and modern
+                digital technologies.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a href="#projects"
+                   class="button primary-button">
+
+                    View Projects
+
+                </a>
+
+
+                <a href="#contact"
+                   class="button outline-button">
+
+                    Contact Me
+
+                </a>
+
+            </div>
+
+
+            <div class="quick-links">
+
+                <a href="https://www.linkedin.com/in/midun-shankar-k-46974031a"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    LinkedIn
+
+                </a>
+
+
+                <a href="https://github.com/Midunshankar"
+                   target="_blank"
+                   rel="noopener noreferrer">
+
+                    GitHub
+
+                </a>
+
+
+                <a href="mailto:midunshankar2007@gmail.com">
+
+                    Email
+
+                </a>
+
+            </div>
 
         </div>
 
-        <div class="social-buttons">
-
-            <a href="https://www.linkedin.com/in/midun-shankar-k-46974031a"
-               target="_blank">
-                LinkedIn
-            </a>
-
-            <a href="https://github.com/Midunshankar"
-               target="_blank">
-                GitHub
-            </a>
-
-        </div>
-
-    </div>
 
 
-    <!-- PROFILE -->
+        <!-- PROFILE -->
 
-    <div class="profile-area">
+        <div class="profile-section">
 
-        <div class="profile-glow">
+            <div class="profile-frame">
 
-            <img src="images/profile.jpg"
-                 alt="Profile Photo"
-                 onerror="this.src='https://via.placeholder.com/400'">
+                <img src="images/profile.jpg"
+                     alt="Midun Shankar K Profile">
+
+            </div>
+
+            <div class="profile-label">
+
+                <strong>
+                    B.Com IT
+                </strong>
+
+                <span>
+                    Aspiring IT Professional
+                </span>
+
+            </div>
 
         </div>
 
-        <div class="floating-card card-one">
-            💻 Web Developer
-        </div>
-
-        <div class="floating-card card-two">
-            🚀 Creative Learner
-        </div>
 
     </div>
 
 </section>
+
 
 
 <!-- ================= ABOUT ================= -->
 
-<section id="about" class="section">
+<section id="about"
+         class="section">
 
-    <div class="section-title">
+    <div class="container">
 
-        <p>GET TO KNOW ME</p>
 
-        <h2>About <span>Me</span></h2>
+        <div class="section-heading">
 
-    </div>
+            <span>
+                ABOUT ME
+            </span>
 
-    <div class="about-container">
-
-        <div class="about-card">
-
-            <div class="about-icon">
-                🎓
-            </div>
-
-            <h3>Education</h3>
-
-            <p>
-                B.Com Information Technology
-            </p>
-
-            <p>
-                K.P.A. College of Arts, Science and Research
-            </p>
+            <h2>
+                Who I Am
+            </h2>
 
         </div>
 
 
-        <div class="about-content">
 
-            <h3>
-                I'm an aspiring IT professional
-            </h3>
+        <div class="about-grid">
 
-            <p>
-                I am a B.Com IT student interested in technology,
-                web development, programming and digital tools.
-            </p>
 
-            <p>
-                I enjoy learning new technologies and creating
-                useful digital projects.
-            </p>
+            <div class="about-text">
 
-            <div class="info-grid">
+                <h3>
+                    Building my skills through technology
+                </h3>
 
-                <div>
-                    <strong>Name</strong>
-                    <span>Midun Shankar K</span>
+
+                <p>
+
+                    I am Midun Shankar K, currently pursuing
+                    B.Com Information Technology at K.P.A.
+                    College of Arts, Science and Research.
+
+                </p>
+
+
+                <p>
+
+                    I am interested in web development,
+                    programming, artificial intelligence and
+                    digital technologies. I enjoy learning new
+                    skills and applying them through practical
+                    projects.
+
+                </p>
+
+
+                <p>
+
+                    My goal is to continuously improve my
+                    technical and professional skills and
+                    build a successful career in the IT field.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="details-card">
+
+
+                <div class="detail">
+
+                    <span>
+                        Name
+                    </span>
+
+                    <strong>
+                        Midun Shankar K
+                    </strong>
+
                 </div>
 
-                <div>
-                    <strong>Course</strong>
-                    <span>B.Com IT</span>
+
+                <div class="detail">
+
+                    <span>
+                        Course
+                    </span>
+
+                    <strong>
+                        B.Com Information Technology
+                    </strong>
+
                 </div>
 
-                <div>
-                    <strong>Email</strong>
-                    <span>midunshankar2007@gmail.com</span>
+
+                <div class="detail">
+
+                    <span>
+                        College
+                    </span>
+
+                    <strong>
+                        K.P.A. College of Arts,
+                        Science and Research
+                    </strong>
+
                 </div>
 
-                <div>
-                    <strong>Location</strong>
-                    <span>India</span>
+
+                <div class="detail">
+
+                    <span>
+                        Email
+                    </span>
+
+                    <strong>
+                        midunshankar2007@gmail.com
+                    </strong>
+
                 </div>
+
+
+                <div class="detail">
+
+                    <span>
+                        Mobile
+                    </span>
+
+                    <strong>
+                        9025365426
+                    </strong>
+
+                </div>
+
 
             </div>
 
@@ -238,425 +365,739 @@
     </div>
 
 </section>
+
 
 
 <!-- ================= SKILLS ================= -->
 
-<section id="skills" class="section skills-section">
+<section id="skills"
+         class="section light-section">
 
-    <div class="section-title">
-
-        <p>MY ABILITIES</p>
-
-        <h2>My <span>Skills</span></h2>
-
-    </div>
+    <div class="container">
 
 
-    <div class="skills-container">
+        <div class="section-heading">
 
-        <div class="skill-card">
-            <div class="skill-icon">HTML</div>
-            <h3>HTML</h3>
-            <div class="progress">
-                <span style="width:90%"></span>
-            </div>
-            <p>90%</p>
+            <span>
+                MY SKILLS
+            </span>
+
+            <h2>
+                Technical Skills
+            </h2>
+
         </div>
 
 
-        <div class="skill-card">
-            <div class="skill-icon">CSS</div>
-            <h3>CSS</h3>
-            <div class="progress">
-                <span style="width:85%"></span>
+
+        <div class="skills-grid">
+
+
+            <!-- HTML -->
+
+            <div class="skill">
+
+                <div class="skill-top">
+
+                    <h3>
+                        HTML
+                    </h3>
+
+                    <span>
+                        90%
+                    </span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div style="width:90%">
+                    </div>
+
+                </div>
+
             </div>
-            <p>85%</p>
-        </div>
 
 
-        <div class="skill-card">
-            <div class="skill-icon">JS</div>
-            <h3>JavaScript</h3>
-            <div class="progress">
-                <span style="width:75%"></span>
+
+            <!-- CSS -->
+
+            <div class="skill">
+
+                <div class="skill-top">
+
+                    <h3>
+                        CSS
+                    </h3>
+
+                    <span>
+                        85%
+                    </span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div style="width:85%">
+                    </div>
+
+                </div>
+
             </div>
-            <p>75%</p>
-        </div>
 
 
-        <div class="skill-card">
-            <div class="skill-icon">PY</div>
-            <h3>Python</h3>
-            <div class="progress">
-                <span style="width:70%"></span>
+
+            <!-- JavaScript -->
+
+            <div class="skill">
+
+                <div class="skill-top">
+
+                    <h3>
+                        JavaScript
+                    </h3>
+
+                    <span>
+                        75%
+                    </span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div style="width:75%">
+                    </div>
+
+                </div>
+
             </div>
-            <p>70%</p>
-        </div>
 
 
-        <div class="skill-card">
-            <div class="skill-icon">GH</div>
-            <h3>Git & GitHub</h3>
-            <div class="progress">
-                <span style="width:70%"></span>
+
+            <!-- Python -->
+
+            <div class="skill">
+
+                <div class="skill-top">
+
+                    <h3>
+                        Python
+                    </h3>
+
+                    <span>
+                        70%
+                    </span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div style="width:70%">
+                    </div>
+
+                </div>
+
             </div>
-            <p>70%</p>
-        </div>
 
 
-        <div class="skill-card">
-            <div class="skill-icon">AI</div>
-            <h3>AI Technologies</h3>
-            <div class="progress">
-                <span style="width:65%"></span>
+
+            <!-- GitHub -->
+
+            <div class="skill">
+
+                <div class="skill-top">
+
+                    <h3>
+                        Git & GitHub
+                    </h3>
+
+                    <span>
+                        70%
+                    </span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div style="width:70%">
+                    </div>
+
+                </div>
+
             </div>
-            <p>65%</p>
+
+
+
+            <!-- AI -->
+
+            <div class="skill">
+
+                <div class="skill-top">
+
+                    <h3>
+                        AI Technologies
+                    </h3>
+
+                    <span>
+                        65%
+                    </span>
+
+                </div>
+
+                <div class="skill-bar">
+
+                    <div style="width:65%">
+                    </div>
+
+                </div>
+
+            </div>
+
+
         </div>
 
     </div>
 
 </section>
+
 
 
 <!-- ================= PROJECTS ================= -->
 
-<section id="projects" class="section">
+<section id="projects"
+         class="section">
 
-    <div class="section-title">
-
-        <p>MY RECENT WORK</p>
-
-        <h2>My <span>Projects</span></h2>
-
-    </div>
+    <div class="container">
 
 
-    <div class="projects-container">
+        <div class="section-heading">
 
-        <div class="project-card">
+            <span>
+                MY WORK
+            </span>
 
-            <div class="project-number">
-                01
-            </div>
-
-            <div class="project-icon">
-                🌐
-            </div>
-
-            <h3>Personal Portfolio</h3>
-
-            <p>
-                A responsive portfolio website created
-                using HTML, CSS and JavaScript.
-            </p>
-
-            <div class="project-tags">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-            </div>
+            <h2>
+                Projects
+            </h2>
 
         </div>
 
 
-        <div class="project-card">
 
-            <div class="project-number">
-                02
-            </div>
-
-            <div class="project-icon">
-                📊
-            </div>
-
-            <h3>Student Management System</h3>
-
-            <p>
-                A Python-based project designed to manage
-                student information efficiently.
-            </p>
-
-            <div class="project-tags">
-                <span>Python</span>
-                <span>Database</span>
-            </div>
-
-        </div>
+        <div class="projects-grid">
 
 
-        <div class="project-card">
+            <!-- PROJECT 1 -->
 
-            <div class="project-number">
-                03
-            </div>
+            <article class="project-card">
 
-            <div class="project-icon">
-                💻
-            </div>
+                <div class="project-number">
+                    01
+                </div>
 
-            <h3>Web Development Project</h3>
 
-            <p>
-                A responsive web project focusing on
-                modern UI and interactive features.
-            </p>
+                <h3>
+                    Personal Portfolio Website
+                </h3>
 
-            <div class="project-tags">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JS</span>
-            </div>
+
+                <p>
+
+                    A responsive personal portfolio website
+                    designed to showcase my education, skills,
+                    projects and achievements.
+
+                </p>
+
+
+                <div class="tags">
+
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PROJECT 2 -->
+
+            <article class="project-card">
+
+                <div class="project-number">
+                    02
+                </div>
+
+
+                <h3>
+                    Student Management System
+                </h3>
+
+
+                <p>
+
+                    A Python-based project for managing
+                    student information in an organized way.
+
+                </p>
+
+
+                <div class="tags">
+
+                    <span>Python</span>
+                    <span>Database</span>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- PROJECT 3 -->
+
+            <article class="project-card">
+
+                <div class="project-number">
+                    03
+                </div>
+
+
+                <h3>
+                    Web Development Project
+                </h3>
+
+
+                <p>
+
+                    A responsive web project created to
+                    practice modern website design and
+                    interactive features.
+
+                </p>
+
+
+                <div class="tags">
+
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JavaScript</span>
+
+                </div>
+
+            </article>
+
 
         </div>
 
     </div>
 
 </section>
+
 
 
 <!-- ================= CERTIFICATES ================= -->
 
-<section id="certificates" class="section certificates-section">
+<section id="certificates"
+         class="section light-section">
 
-    <div class="section-title">
-
-        <p>MY ACHIEVEMENTS</p>
-
-        <h2>My <span>Certificates</span></h2>
-
-    </div>
+    <div class="container">
 
 
-    <div class="certificate-container">
+        <div class="section-heading">
 
-        <div class="certificate-card">
+            <span>
+                ACHIEVEMENTS
+            </span>
 
-            <img src="images/certificate.jpg"
-                 alt="Certificate"
-                 id="certificateImage">
+            <h2>
+                Certificates
+            </h2>
 
-            <div class="certificate-content">
+        </div>
 
-                <h3>Social Media Marketing</h3>
 
-                <p>
-                    HP LIFE / HP Foundation
+
+        <div class="certificate-grid">
+
+
+            <div class="certificate-image">
+
+                <img src="images/certificate.jpg"
+                     alt="Social Media Marketing Certificate">
+
+            </div>
+
+
+
+            <div class="certificate-info">
+
+                <p class="certificate-label">
+                    CERTIFICATE OF COMPLETION
                 </p>
 
-                <button class="view-btn" id="viewCertificate">
+
+                <h3>
+                    Social Media Marketing
+                </h3>
+
+
+                <p>
+
+                    Successfully completed the Social Media
+                    Marketing online course from HP LIFE /
+                    HP Foundation.
+
+                </p>
+
+
+                <button class="button primary-button"
+                        id="certificateButton">
+
                     View Certificate
+
                 </button>
 
             </div>
 
+
         </div>
 
     </div>
 
 </section>
+
 
 
 <!-- ================= RESUME ================= -->
 
-<section class="section resume-section">
+<section class="section">
 
-    <div class="resume-box">
+    <div class="container">
 
-        <div>
 
-            <p>MY PROFESSIONAL PROFILE</p>
+        <div class="resume-card">
 
-            <h2>
-                View My <span>Resume</span>
-            </h2>
 
-            <p>
-                Explore my education, skills, certifications
-                and professional information.
-            </p>
+            <div>
+
+                <span>
+                    MY RESUME
+                </span>
+
+
+                <h2>
+                    Want to know more about me?
+                </h2>
+
+
+                <p>
+
+                    View my resume to explore my education,
+                    skills, certifications and achievements.
+
+                </p>
+
+            </div>
+
+
+            <button class="button primary-button"
+                    id="resumeButton">
+
+                View Resume
+
+            </button>
+
 
         </div>
-
-        <button class="btn primary" id="resumeBtn">
-            📄 View Resume
-        </button>
 
     </div>
 
 </section>
+
 
 
 <!-- ================= CONTACT ================= -->
 
-<section id="contact" class="section">
+<section id="contact"
+         class="section contact-section">
 
-    <div class="section-title">
-
-        <p>GET IN TOUCH</p>
-
-        <h2>Contact <span>Me</span></h2>
-
-    </div>
+    <div class="container">
 
 
-    <div class="contact-container">
+        <div class="section-heading">
 
+            <span>
+                CONTACT
+            </span>
 
-        <div class="contact-info">
-
-            <div class="contact-item">
-
-                <div class="contact-icon">
-                    📱
-                </div>
-
-                <div>
-                    <h3>Mobile</h3>
-                    <p>9025365426</p>
-                </div>
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <div class="contact-icon">
-                    ✉️
-                </div>
-
-                <div>
-                    <h3>Email</h3>
-                    <p>midunshankar2007@gmail.com</p>
-                </div>
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <div class="contact-icon">
-                    🔗
-                </div>
-
-                <div>
-                    <h3>LinkedIn</h3>
-                    <p>Midun Shankar K</p>
-                </div>
-
-            </div>
-
-
-            <div class="contact-item">
-
-                <div class="contact-icon">
-                    🐙
-                </div>
-
-                <div>
-                    <h3>GitHub</h3>
-                    <p>Midunshankar</p>
-                </div>
-
-            </div>
+            <h2>
+                Let's Connect
+            </h2>
 
         </div>
 
 
-        <form id="contactForm">
 
-            <input
-                type="text"
-                id="name"
-                placeholder="Your Name"
-                required
-            >
+        <div class="contact-grid">
 
-            <input
-                type="email"
-                id="email"
-                placeholder="Your Email"
-                required
-            >
 
-            <textarea
-                id="message"
-                rows="6"
-                placeholder="Your Message"
-                required
-            ></textarea>
+            <!-- CONTACT DETAILS -->
 
-            <button type="submit" class="btn primary">
-                Send Message 🚀
-            </button>
+            <div class="contact-details">
 
-        </form>
+
+                <a href="tel:9025365426"
+                   class="contact-box">
+
+                    <div class="contact-icon">
+                        ☎
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Mobile
+                        </span>
+
+                        <strong>
+                            9025365426
+                        </strong>
+
+                    </div>
+
+                </a>
+
+
+
+                <a href="mailto:midunshankar2007@gmail.com"
+                   class="contact-box">
+
+                    <div class="contact-icon">
+                        @
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Email
+                        </span>
+
+                        <strong>
+                            midunshankar2007@gmail.com
+                        </strong>
+
+                    </div>
+
+                </a>
+
+
+
+                <a href="https://www.linkedin.com/in/midun-shankar-k-46974031a"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="contact-box">
+
+                    <div class="contact-icon">
+                        in
+                    </div>
+
+                    <div>
+
+                        <span>
+                            LinkedIn
+                        </span>
+
+                        <strong>
+                            Midun Shankar K
+                        </strong>
+
+                    </div>
+
+                </a>
+
+
+
+                <a href="https://github.com/Midunshankar"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="contact-box">
+
+                    <div class="contact-icon">
+                        GH
+                    </div>
+
+                    <div>
+
+                        <span>
+                            GitHub
+                        </span>
+
+                        <strong>
+                            Midunshankar
+                        </strong>
+
+                    </div>
+
+                </a>
+
+
+            </div>
+
+
+
+            <!-- CONTACT FORM -->
+
+            <form id="contactForm"
+                  class="contact-form">
+
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Your Name"
+                    required>
+
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Your Email"
+                    required>
+
+
+                <textarea
+                    id="message"
+                    rows="6"
+                    placeholder="Your Message"
+                    required></textarea>
+
+
+                <button
+                    type="submit"
+                    class="button primary-button">
+
+                    Send Message
+
+                </button>
+
+
+            </form>
+
+
+        </div>
 
     </div>
 
 </section>
+
+
+</main>
+
 
 
 <!-- ================= FOOTER ================= -->
 
 <footer>
 
-    <div class="footer-logo">
-        MS
+    <div class="container footer-content">
+
+
+        <div>
+
+            <a href="#home"
+               class="logo">
+
+                MSK
+
+            </a>
+
+
+            <p>
+
+                Midun Shankar K |
+                B.Com IT Student
+
+            </p>
+
+        </div>
+
+
+
+        <div class="footer-links">
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#about">
+                About
+            </a>
+
+            <a href="#projects">
+                Projects
+            </a>
+
+            <a href="#contact">
+                Contact
+            </a>
+
+        </div>
+
+
     </div>
 
-    <h2>Midun Shankar K</h2>
 
-    <p>
-        B.Com IT Student | Aspiring IT Professional
-    </p>
+    <div class="copyright">
 
-    <div class="footer-links">
-
-        <a href="https://www.linkedin.com/in/midun-shankar-k-46974031a"
-           target="_blank">
-            LinkedIn
-        </a>
-
-        <a href="https://github.com/Midunshankar"
-           target="_blank">
-            GitHub
-        </a>
-
-        <a href="mailto:midunshankar2007@gmail.com">
-            Email
-        </a>
+        © 2026 Midun Shankar K.
+        All Rights Reserved.
 
     </div>
-
-    <p class="copyright">
-        © 2026 Midun Shankar K. All Rights Reserved.
-    </p>
 
 </footer>
 
 
+
 <!-- ================= MODAL ================= -->
 
-<div class="modal" id="imageModal">
+<div class="modal"
+     id="modal">
 
-    <button class="close-modal" id="closeModal">
+
+    <button class="modal-close"
+            id="modalClose">
+
         ×
+
     </button>
 
-    <img id="modalImage" src="" alt="Preview">
+
+    <img id="modalImage"
+         src=""
+         alt="Document Preview">
 
 </div>
 
 
+
 <!-- ================= BACK TO TOP ================= -->
 
-<button id="topBtn">
+<button id="topButton"
+        class="top-button">
+
     ↑
+
 </button>
 
 
+
+<!-- ================= JAVASCRIPT ================= -->
+
 <script src="script.js"></script>
 
+
 </body>
+
 </html>
