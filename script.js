@@ -1,50 +1,26 @@
 /* =========================================
-   LOADER
-========================================= */
-
-window.addEventListener("load", () => {
-
-    const loader = document.getElementById("loader");
-
-    setTimeout(() => {
-        loader.style.opacity = "0";
-
-        setTimeout(() => {
-            loader.style.display = "none";
-        }, 500);
-
-    }, 700);
-
-});
-
-
-/* =========================================
    MOBILE MENU
 ========================================= */
 
-const menuBtn = document.getElementById("menuBtn");
-const navLinks = document.getElementById("navLinks");
+const menuButton = document.getElementById("menuButton");
+const navMenu = document.getElementById("navMenu");
 
-menuBtn.addEventListener("click", () => {
+menuButton.addEventListener("click", () => {
 
-    navLinks.classList.toggle("show");
-
-    menuBtn.textContent =
-        navLinks.classList.contains("show")
-        ? "✕"
-        : "☰";
+    navMenu.classList.toggle("show");
 
 });
 
 
-/* Close menu after clicking a link */
+/* Close mobile menu after clicking a link */
 
-document.querySelectorAll(".nav-links a").forEach(link => {
+const navLinks = document.querySelectorAll(".nav-link");
+
+navLinks.forEach(link => {
 
     link.addEventListener("click", () => {
 
-        navLinks.classList.remove("show");
-        menuBtn.textContent = "☰";
+        navMenu.classList.remove("show");
 
     });
 
@@ -55,117 +31,47 @@ document.querySelectorAll(".nav-links a").forEach(link => {
    DARK / LIGHT MODE
 ========================================= */
 
-const themeBtn = document.getElementById("themeBtn");
+const themeButton = document.getElementById("themeButton");
 
-const savedTheme = localStorage.getItem("portfolioTheme");
+themeButton.addEventListener("click", () => {
 
-if (savedTheme === "light") {
+    document.body.classList.toggle("dark");
 
-    document.body.classList.add("light");
-    themeBtn.textContent = "☀️";
+    if (document.body.classList.contains("dark")) {
 
-}
+        themeButton.textContent = "☀️";
 
-themeBtn.addEventListener("click", () => {
+        localStorage.setItem("theme", "dark");
 
-    document.body.classList.toggle("light");
+    } else {
 
-    const lightMode =
-        document.body.classList.contains("light");
+        themeButton.textContent = "🌙";
 
-    themeBtn.textContent =
-        lightMode ? "☀️" : "🌙";
+        localStorage.setItem("theme", "light");
 
-    localStorage.setItem(
-        "portfolioTheme",
-        lightMode ? "light" : "dark"
-    );
+    }
 
 });
 
 
-/* =========================================
-   TYPING ANIMATION
-========================================= */
+/* Remember theme */
 
-const typingElement =
-    document.getElementById("typing");
+const savedTheme = localStorage.getItem("theme");
 
-const words = [
-    "B.Com IT Student",
-    "Aspiring IT Professional",
-    "Web Developer",
-    "Creative Learner",
-    "Python Learner",
-    "AI Enthusiast"
-];
+if (savedTheme === "dark") {
 
-let wordIndex = 0;
-let charIndex = 0;
-let deleting = false;
+    document.body.classList.add("dark");
 
-
-function typingEffect() {
-
-    const currentWord = words[wordIndex];
-
-    if (!deleting) {
-
-        typingElement.textContent =
-            currentWord.substring(0, charIndex + 1);
-
-        charIndex++;
-
-        if (charIndex === currentWord.length) {
-
-            deleting = true;
-
-            setTimeout(typingEffect, 1500);
-
-            return;
-        }
-
-    } else {
-
-        typingElement.textContent =
-            currentWord.substring(0, charIndex - 1);
-
-        charIndex--;
-
-        if (charIndex === 0) {
-
-            deleting = false;
-
-            wordIndex++;
-
-            if (wordIndex >= words.length) {
-                wordIndex = 0;
-            }
-
-        }
-
-    }
-
-    setTimeout(
-        typingEffect,
-        deleting ? 50 : 100
-    );
+    themeButton.textContent = "☀️";
 
 }
-
-typingEffect();
 
 
 /* =========================================
    ACTIVE NAVIGATION
 ========================================= */
 
-const sections =
-    document.querySelectorAll("section");
-
-const navItems =
-    document.querySelectorAll(".nav-links a");
-
+const sections = document.querySelectorAll("section[id]");
 
 window.addEventListener("scroll", () => {
 
@@ -173,8 +79,7 @@ window.addEventListener("scroll", () => {
 
     sections.forEach(section => {
 
-        const sectionTop =
-            section.offsetTop - 150;
+        const sectionTop = section.offsetTop - 120;
 
         if (window.scrollY >= sectionTop) {
             current = section.getAttribute("id");
@@ -182,14 +87,11 @@ window.addEventListener("scroll", () => {
 
     });
 
-    navItems.forEach(link => {
+    navLinks.forEach(link => {
 
         link.classList.remove("active");
 
-        if (
-            link.getAttribute("href") ===
-            "#" + current
-        ) {
+        if (link.getAttribute("href") === "#" + current) {
             link.classList.add("active");
         }
 
@@ -202,26 +104,24 @@ window.addEventListener("scroll", () => {
    BACK TO TOP
 ========================================= */
 
-const topBtn =
-    document.getElementById("topBtn");
-
+const topButton = document.getElementById("topButton");
 
 window.addEventListener("scroll", () => {
 
-    if (window.scrollY > 500) {
+    if (window.scrollY > 400) {
 
-        topBtn.style.display = "block";
+        topButton.classList.add("show");
 
     } else {
 
-        topBtn.style.display = "none";
+        topButton.classList.remove("show");
 
     }
 
 });
 
 
-topBtn.addEventListener("click", () => {
+topButton.addEventListener("click", () => {
 
     window.scrollTo({
         top: 0,
@@ -235,68 +135,77 @@ topBtn.addEventListener("click", () => {
    CERTIFICATE MODAL
 ========================================= */
 
-const certificate =
-    document.getElementById("certificateImage");
+const modal = document.getElementById("modal");
+const modalImage = document.getElementById("modalImage");
+const modalClose = document.getElementById("modalClose");
 
-const viewCertificate =
-    document.getElementById("viewCertificate");
-
-const modal =
-    document.getElementById("imageModal");
-
-const modalImage =
-    document.getElementById("modalImage");
-
-const closeModal =
-    document.getElementById("closeModal");
+const certificateButton =
+    document.getElementById("certificateButton");
 
 
-viewCertificate.addEventListener("click", () => {
+certificateButton.addEventListener("click", () => {
 
-    modalImage.src = certificate.src;
+    modalImage.src = "images/certificate.jpg";
+
+    modalImage.alt = "Social Media Marketing Certificate";
 
     modal.classList.add("show");
 
 });
 
 
-certificate.addEventListener("click", () => {
+/* =========================================
+   RESUME MODAL
+========================================= */
 
-    modalImage.src = certificate.src;
+const resumeButton =
+    document.getElementById("resumeButton");
+
+
+resumeButton.addEventListener("click", () => {
+
+    modalImage.src = "images/resume.jpg";
+
+    modalImage.alt = "Resume";
 
     modal.classList.add("show");
 
 });
 
 
-closeModal.addEventListener("click", () => {
+/* =========================================
+   CLOSE MODAL
+========================================= */
+
+modalClose.addEventListener("click", () => {
 
     modal.classList.remove("show");
 
 });
 
 
+/* Close modal when clicking outside */
+
 modal.addEventListener("click", (event) => {
 
     if (event.target === modal) {
+
         modal.classList.remove("show");
+
     }
 
 });
 
 
-/* =========================================
-   RESUME
-========================================= */
+/* Close modal using Escape */
 
-const resumeBtn =
-    document.getElementById("resumeBtn");
+document.addEventListener("keydown", (event) => {
 
-resumeBtn.addEventListener("click", () => {
+    if (event.key === "Escape") {
 
-    modalImage.src = "images/resume.jpg";
+        modal.classList.remove("show");
 
-    modal.classList.add("show");
+    }
 
 });
 
@@ -314,19 +223,26 @@ contactForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
     const name =
-        document.getElementById("name").value;
+        document.getElementById("name").value.trim();
 
     const email =
-        document.getElementById("email").value;
+        document.getElementById("email").value.trim();
 
     const message =
-        document.getElementById("message").value;
+        document.getElementById("message").value.trim();
+
+
+    if (!name || !email || !message) {
+
+        alert("Please fill in all fields.");
+
+        return;
+
+    }
 
 
     const subject =
-        encodeURIComponent(
-            "Portfolio Contact - " + name
-        );
+        encodeURIComponent("Portfolio Contact from " + name);
 
     const body =
         encodeURIComponent(
@@ -339,46 +255,32 @@ contactForm.addEventListener("submit", (event) => {
     window.location.href =
         `mailto:midunshankar2007@gmail.com?subject=${subject}&body=${body}`;
 
+
+    contactForm.reset();
+
 });
 
 
 /* =========================================
-   IMAGE FALLBACK
+   CURRENT YEAR
 ========================================= */
 
-document.querySelectorAll("img").forEach(img => {
+document.getElementById("year").textContent =
+    new Date().getFullYear();
 
-    img.addEventListener("error", () => {
 
-        console.log(
-            "Image not found:",
-            img.src
-        );
+/* =========================================
+   IMAGE ERROR HANDLING
+========================================= */
+
+const images = document.querySelectorAll("img");
+
+images.forEach(image => {
+
+    image.addEventListener("error", () => {
+
+        image.style.display = "none";
 
     });
 
 });
-
-
-/* =========================================
-   KEYBOARD THEME SHORTCUT
-========================================= */
-
-document.addEventListener("keydown", (event) => {
-
-    if (
-        event.key.toLowerCase() === "d" &&
-        event.target.tagName !== "INPUT" &&
-        event.target.tagName !== "TEXTAREA"
-    ) {
-
-        themeBtn.click();
-
-    }
-
-});
-
-
-console.log(
-    "Midun Shankar K Portfolio Loaded Successfully 🚀"
-);
