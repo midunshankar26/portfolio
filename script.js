@@ -169,3 +169,59 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 });
+
+/* =========================================
+   4 THEME ANIMATION CONTROL
+========================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const body = document.body;
+
+    // Animation elements
+    const sun = document.querySelector(".morning-sun");
+    const clouds = document.querySelectorAll(".cloud");
+    const rain = document.querySelector(".rain");
+    const rainbow = document.querySelector(".rainbow");
+    const stars = document.querySelector(".stars");
+    const shootingStars = document.querySelector(".shooting-stars");
+
+    function updateThemeAnimation() {
+
+        // Check current theme
+        if (body.classList.contains("morning")) {
+
+            console.log("🌅 Morning animation active");
+
+        } 
+        else if (body.classList.contains("afternoon")) {
+
+            console.log("☀️ Afternoon animation active");
+
+        } 
+        else if (body.classList.contains("evening")) {
+
+            console.log("🌧️ Evening rain + rainbow active");
+
+        } 
+        else if (body.classList.contains("night")) {
+
+            console.log("🌙 Night stars + shooting stars active");
+
+        }
+    }
+
+    // Run when page loads
+    updateThemeAnimation();
+
+    // Detect theme changes
+    const observer = new MutationObserver(() => {
+        updateThemeAnimation();
+    });
+
+    observer.observe(body, {
+        attributes: true,
+        attributeFilter: ["class"]
+    });
+
+});
