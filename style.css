@@ -549,3 +549,460 @@ body.night .bg-animation > span:nth-child(4) {
     margin: 10px auto;
   }
 }
+
+/* =========================================
+   4 THEME ANIMATIONS
+========================================= */
+
+.bg-animation {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* =========================================
+   MORNING 🌅
+   Moving Sun
+========================================= */
+
+.morning-sun {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #ffd54f;
+    box-shadow:
+        0 0 30px #ffd54f,
+        0 0 60px #ffca28,
+        0 0 100px #ffb300;
+
+    top: 15%;
+    left: -120px;
+
+    animation: morningSun 12s linear infinite;
+}
+
+@keyframes morningSun {
+
+    0% {
+        left: -120px;
+        transform: translateY(80px);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        left: 110%;
+        transform: translateY(80px);
+    }
+}
+
+
+/* =========================================
+   AFTERNOON ☀️
+   Moving Clouds
+========================================= */
+
+.cloud {
+    position: absolute;
+    width: 140px;
+    height: 45px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50px;
+    opacity: 0;
+}
+
+.cloud::before,
+.cloud::after {
+    content: "";
+    position: absolute;
+    background: inherit;
+    border-radius: 50%;
+}
+
+.cloud::before {
+    width: 60px;
+    height: 60px;
+    left: 25px;
+    bottom: 15px;
+}
+
+.cloud::after {
+    width: 75px;
+    height: 75px;
+    right: 20px;
+    bottom: 10px;
+}
+
+.cloud-1 {
+    top: 20%;
+    left: -180px;
+    animation: cloudMove 18s linear infinite;
+}
+
+.cloud-2 {
+    top: 35%;
+    left: -250px;
+    transform: scale(0.7);
+    animation: cloudMove 25s linear infinite;
+    animation-delay: 5s;
+}
+
+body.afternoon .cloud {
+    opacity: 1;
+}
+
+@keyframes cloudMove {
+
+    0% {
+        left: -200px;
+    }
+
+    100% {
+        left: 110%;
+    }
+}
+
+
+/* =========================================
+   EVENING 🌧️
+   Rain Animation
+========================================= */
+
+.rain {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+}
+
+body.evening .rain {
+    opacity: 1;
+}
+
+.rain span {
+    position: absolute;
+    top: -100px;
+    width: 2px;
+    height: 70px;
+    background: linear-gradient(
+        transparent,
+        rgba(255, 255, 255, 0.8)
+    );
+
+    animation: rainFall 0.8s linear infinite;
+}
+
+.rain span:nth-child(1) {
+    left: 5%;
+    animation-delay: 0.1s;
+}
+
+.rain span:nth-child(2) {
+    left: 15%;
+    animation-delay: 0.4s;
+}
+
+.rain span:nth-child(3) {
+    left: 25%;
+    animation-delay: 0.2s;
+}
+
+.rain span:nth-child(4) {
+    left: 35%;
+    animation-delay: 0.6s;
+}
+
+.rain span:nth-child(5) {
+    left: 45%;
+    animation-delay: 0.3s;
+}
+
+.rain span:nth-child(6) {
+    left: 55%;
+    animation-delay: 0.7s;
+}
+
+.rain span:nth-child(7) {
+    left: 65%;
+    animation-delay: 0.2s;
+}
+
+.rain span:nth-child(8) {
+    left: 75%;
+    animation-delay: 0.5s;
+}
+
+.rain span:nth-child(9) {
+    left: 85%;
+    animation-delay: 0.1s;
+}
+
+.rain span:nth-child(10) {
+    left: 95%;
+    animation-delay: 0.6s;
+}
+
+@keyframes rainFall {
+
+    0% {
+        transform: translateY(-100px);
+    }
+
+    100% {
+        transform: translateY(110vh);
+    }
+}
+
+
+/* =========================================
+   RAINBOW 🌈
+========================================= */
+
+.rainbow {
+    position: absolute;
+    width: 500px;
+    height: 250px;
+    left: 50%;
+    bottom: 5%;
+
+    border-radius: 500px 500px 0 0;
+
+    background: conic-gradient(
+        from 180deg,
+        #ff0000,
+        #ff7f00,
+        #ffff00,
+        #00ff00,
+        #00bfff,
+        #0000ff,
+        #8b00ff,
+        transparent 50%
+    );
+
+    opacity: 0;
+    transform: translateX(-50%);
+
+    -webkit-mask:
+        radial-gradient(
+            ellipse,
+            transparent 0 55%,
+            #000 56% 63%,
+            transparent 64%
+        );
+
+    mask:
+        radial-gradient(
+            ellipse,
+            transparent 0 55%,
+            #000 56% 63%,
+            transparent 64%
+        );
+
+    animation: rainbowAnimation 6s ease-in-out infinite;
+}
+
+body.evening .rainbow {
+    opacity: 0.7;
+}
+
+@keyframes rainbowAnimation {
+
+    0% {
+        transform: translateX(-50%) scale(0.9);
+    }
+
+    50% {
+        transform: translateX(-50%) scale(1);
+    }
+
+    100% {
+        transform: translateX(-50%) scale(0.9);
+    }
+}
+
+
+/* =========================================
+   NIGHT 🌙
+   Stars
+========================================= */
+
+.stars {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+}
+
+body.night .stars {
+    opacity: 1;
+}
+
+.stars span {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 8px white;
+
+    animation: twinkle 2s ease-in-out infinite alternate;
+}
+
+.stars span:nth-child(1) {
+    left: 10%;
+    top: 15%;
+}
+
+.stars span:nth-child(2) {
+    left: 25%;
+    top: 30%;
+}
+
+.stars span:nth-child(3) {
+    left: 40%;
+    top: 10%;
+}
+
+.stars span:nth-child(4) {
+    left: 55%;
+    top: 25%;
+}
+
+.stars span:nth-child(5) {
+    left: 70%;
+    top: 12%;
+}
+
+.stars span:nth-child(6) {
+    left: 80%;
+    top: 40%;
+}
+
+.stars span:nth-child(7) {
+    left: 90%;
+    top: 20%;
+}
+
+.stars span:nth-child(8) {
+    left: 60%;
+    top: 50%;
+}
+
+@keyframes twinkle {
+
+    from {
+        opacity: 0.3;
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.4);
+    }
+}
+
+
+/* =========================================
+   NIGHT 🌠
+   Shooting Stars
+========================================= */
+
+.shooting-stars {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    opacity: 0;
+}
+
+body.night .shooting-stars {
+    opacity: 1;
+}
+
+.shooting-stars span {
+    position: absolute;
+    top: -50px;
+    width: 4px;
+    height: 4px;
+    background: white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px white;
+
+    animation: shootingStar 4s linear infinite;
+}
+
+.shooting-stars span::after {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 2px;
+    right: 2px;
+    top: 1px;
+
+    background: linear-gradient(
+        to left,
+        white,
+        transparent
+    );
+}
+
+.shooting-stars span:nth-child(1) {
+    left: 80%;
+    animation-delay: 0s;
+}
+
+.shooting-stars span:nth-child(2) {
+    left: 60%;
+    animation-delay: 2s;
+}
+
+.shooting-stars span:nth-child(3) {
+    left: 90%;
+    animation-delay: 4s;
+}
+
+@keyframes shootingStar {
+
+    0% {
+        transform: translate(0, 0) rotate(45deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-600px, 600px) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .morning-sun {
+        width: 70px;
+        height: 70px;
+    }
+
+    .rainbow {
+        width: 320px;
+        height: 160px;
+    }
+
+    .shooting-stars span::after {
+        width: 70px;
+    }
+}
